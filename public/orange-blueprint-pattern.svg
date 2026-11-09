@@ -1,0 +1,11 @@
+<svg width="1800" height="1800" viewBox="0 0 1800 1800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="blueprint_grid_orange" width="124" height="124" x="32" y="32" patternUnits="userSpaceOnUse">
+      <path d="M0 0h124v124H0z" fill="none" stroke="#ffffff" stroke-width="0.75" stroke-opacity="0.08" />
+      <path d="M0 -5v10 M-5 0h10" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.32" stroke-linecap="round" fill="none" />
+      <path d="M62 58v8 M58 62h8" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.32" stroke-linecap="round" fill="none" />
+    </pattern>
+  </defs>
+  <rect width="1800" height="1800" fill="#FF6900" />
+  <rect width="1800" height="1800" fill="url(#blueprint_grid_orange)" />
+</svg>

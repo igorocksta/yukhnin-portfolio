@@ -1,0 +1,26 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+*.zip
+*.patch
+.vscode/
+.idea/
+.aistudio/
+public/assets/aistudio/
+
+# Root temporary scratch files
+/*.cjs
+/*.sh
+/*.py
+/*.txt
+/test.html
+/test-poplayout.js
+/1.png
+/Prototype 5.png
+/ya chat 2.png
+

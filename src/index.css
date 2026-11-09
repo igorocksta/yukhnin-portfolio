@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=DM+Sans:ital,wght@0,100..1000;1,100..1000&family=Hanken+Grotesk:ital,wght@0,300..700;1,300..700&family=Inter:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@400..700&family=Space+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-80: 80px;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-quote: "Hanken Grotesk", sans-serif;
+  --font-hanken: "Hanken Grotesk", sans-serif;
+  --font-bodoni: "Hanken Grotesk", sans-serif;
+  --font-archivo: "Archivo", sans-serif;
+  --font-dm-sans: "DM Sans", sans-serif;
+  --font-mono: "Space Mono", monospace;
+  --font-space-mono: "Space Mono", monospace;
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+}
+
+.font-dm-sans {
+  font-family: "DM Sans", sans-serif;
+}
+
+.font-inter {
+  font-family: "Inter", sans-serif;
+}
+
+.font-serif, .font-playfair {
+  font-family: "Playfair Display", serif;
+}
+
+.font-hanken, .font-quote {
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+.font-space-mono {
+  font-family: "Space Mono", monospace;
+}
+
+.font-space-grotesk {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.font-archivo {
+  font-family: "Archivo", sans-serif;
+}
+
+@layer base {
+  *, ::before, ::after {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html, body {
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+    cursor: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 10v12M10 16h12' stroke='%23f9f9f9' stroke-width='1.2' stroke-linecap='round' fill='none'/%3E%3C/svg%3E") 16 16, auto;
+  }
+  body {
+    overflow-x: hidden;
+    @apply bg-[#080808] text-white selection:bg-orange-500/30 selection:text-orange-200;
+  }
+
+  /* Mobile-only tighter kerning for headings */
+  @media (max-width: 767px) {
+    h1, h2, h3, .font-dm-sans.font-extrabold {
+      letter-spacing: -1px;
+    }
+  }
+  
+  a, button, [role="button"], select, input[type="submit"], .cursor-pointer {
+    cursor: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 10v12M10 16h12' stroke='%23ff6900' stroke-width='1.6' stroke-linecap='round' fill='none'/%3E%3C/svg%3E") 16 16, pointer;
+  }
+
+  /* When the React-based interactive custom cursor is loaded/active, hide all cursors */
+  .custom-cursor-active,
+  .custom-cursor-active *,
+  .custom-cursor-active a,
+  .custom-cursor-active button,
+  .custom-cursor-active [role="button"],
+  .custom-cursor-active select,
+  .custom-cursor-active input,
+  .custom-cursor-active .cursor-pointer {
+    cursor: none !important;
+  }
+
+  /* Disable pointer events during programmatic smooth scroll to eliminate layout thrashing & guarantee 60/120 FPS */
+  .is-smooth-scrolling,
+  .is-smooth-scrolling * {
+    pointer-events: none !important;
+  }
+}
+
+.text-reveal {
+  @apply overflow-hidden;
+}
+
+.text-reveal span {
+  @apply block origin-bottom;
+}
+
+.glass {
+  @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.10];
+}
+
+/* Signature background glow for italic orange headline accents - smooth diffuse ambient layer */
+.glow-orange-italic {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  z-index: 1;
+}
+
+/* Eliminate halos around letters - keep letter contours pure and elegant */
+.glow-orange-italic,
+.glow-orange-italic * {
+  text-shadow: none !important;
+}
+
+/* Ensure white heading text is always stacked cleanly in the foreground above ambient glows */
+.heading-foreground-text,
+h1:has(.glow-orange-italic) span:not(.glow-orange-italic):not(.glow-orange-italic *),
+h1:has(.glow-orange-italic) div:not(:has(.glow-orange-italic)),
+h2:has(.glow-orange-italic) span:not(.glow-orange-italic):not(.glow-orange-italic *),
+h2:has(.glow-orange-italic) div:not(:has(.glow-orange-italic)),
+h3:has(.glow-orange-italic) span:not(.glow-orange-italic):not(.glow-orange-italic *),
+h3:has(.glow-orange-italic) div:not(:has(.glow-orange-italic)) {
+  position: relative;
+  z-index: 20;
+  color: #ffffff !important;
+}
+
+/* Large, smooth, diffuse ambient background glow evenly spreading across the dark background */
+.glow-orange-italic::before {
+  content: "";
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 180px);
+  height: calc(100% + 180px);
+  min-width: 320px;
+  min-height: 220px;
+  background: radial-gradient(
+    ellipse 65% 55% at 50% 65%,
+    rgba(255, 105, 0, 0.20) 0%,
+    rgba(255, 95, 0, 0.11) 35%,
+    rgba(255, 80, 0, 0.03) 60%,
+    transparent 80%
+  );
+  filter: blur(52px);
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media (min-width: 768px) {
+  .glow-orange-italic::before {
+    width: calc(100% + 260px);
+    height: calc(100% + 240px);
+    min-width: 440px;
+    min-height: 280px;
+    background: radial-gradient(
+      ellipse 65% 55% at 50% 65%,
+      rgba(255, 105, 0, 0.18) 0%,
+      rgba(255, 95, 0, 0.09) 35%,
+      rgba(255, 80, 0, 0.02) 60%,
+      transparent 80%
+    );
+    filter: blur(64px);
+  }
+}
+
+.container-custom {
+  @apply max-w-[1432px] mx-auto px-4 md:px-8;
+}
+
+@media (min-width: 1024px) {
+  .slider-fade-mask {
+    mask-image: linear-gradient(to right, #000 calc(100% - 64px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 64px), transparent 100%);
+  }
+}
+
+/* High-performance hardware-accelerated accordion transitions */
+.accordion-grid {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 320ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: grid-template-rows;
+}
+
+.accordion-grid.is-open {
+  grid-template-rows: 1fr;
+}
+
+.accordion-inner {
+  overflow: hidden;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-none {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Custom sleek grey scrollbar for popups and modals (4px thin thumb) */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Horizontal tablet only (touch devices in landscape orientation, such as iPad) */
+@media (hover: none) and (pointer: coarse) and (min-width: 768px) and (orientation: landscape) {
+  .tablet-hero-desc {
+    max-width: 632px !important;
+    width: 632px !important;
+  }
+  .tablet-hero-title {
+    font-size: 48px !important;
+    line-height: 48px !important;
+  }
+}
+
+/* Infinite Marquee Animation for Clients Section */
+@keyframes marquee-infinite {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee-infinite {
+  animation: marquee-infinite 42s linear infinite;
+  will-change: transform;
+}
+
+.pause-marquee {
+  animation-play-state: paused !important;
+}
+
+/* Cinematic 24fps film grain jitter animation */
+@keyframes filmGrainJitter {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-1%, -1.5%); }
+  20% { transform: translate(1.5%, 0.5%); }
+  30% { transform: translate(-0.5%, 2%); }
+  40% { transform: translate(2%, -1%); }
+  50% { transform: translate(-1.5%, 1%); }
+  60% { transform: translate(1%, -2%); }
+  70% { transform: translate(-2%, 0.5%); }
+  80% { transform: translate(0.5%, 1.5%); }
+  90% { transform: translate(1.5%, -0.5%); }
+}
+
+.film-grain-fx {
+  animation: filmGrainJitter 0.5s steps(6) infinite;
+  will-change: transform;
+}
+
+
