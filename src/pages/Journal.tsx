@@ -35,7 +35,7 @@ export default function Journal() {
   // Localized articles based on selected language
   const localizedPosts = getLocalizedJournalPosts(language);
   const featuredPost = localizedPosts[0];
-  const regularPosts = localizedPosts.slice(1, 3);
+  const regularPosts = localizedPosts.slice(1, 2);
 
   const categories = ['All', ...Array.from(new Set(localizedPosts.map((p) => p.category)))];
 

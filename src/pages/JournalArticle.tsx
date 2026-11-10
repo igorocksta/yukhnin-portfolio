@@ -21,10 +21,7 @@ import JournalLanguageSwitcher from '../components/JournalLanguageSwitcher';
 
 const BASE_LIKES: Record<string, number> = {
   'post-1': 4,
-  'post-2': 34,
-  'post-3': 52,
-  'post-4': 29,
-  'post-5': 41,
+  'post-3': 2,
 };
 
 export default function JournalArticle() {

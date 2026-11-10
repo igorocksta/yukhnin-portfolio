@@ -170,43 +170,6 @@ export const JOURNAL_POSTS: JournalPost[] = [
     }
   },
   {
-    id: 'post-2',
-    slug: 'ai-as-a-design-copilot-accelerating-workflows-beyond-the-hype',
-    title: 'AI as a Design Co-Pilot: Accelerating Systems Research Beyond the Hype',
-    subtitle: 'Practical patterns for component audits, edge-case generation, and documentation churn',
-    excerpt: 'How AI automates mechanical component audits and documentation, freeing designers to focus on strategic decisions.',
-    date: 'September 18, 2026',
-    readingTime: '5 min read',
-    category: 'AI & Workflow',
-    tags: ['AI Tooling', 'Design Workflow', 'Automation', 'Productivity'],
-    image: '/Free_M_Mockups_iMac_24_Inch.png',
-    content: {
-      lead: 'The conversation around AI in product design has swung wildly between breathless hype and existential anxiety. The reality in the trenches of senior product design is far more grounded: AI is the most effective workflow accelerator we have ever had for tedious, mechanical systems tasks.',
-      sections: [
-        {
-          heading: 'Automating the Boring 80%',
-          paragraphs: [
-            'Designing high-scale enterprise applications requires accounting for hundreds of edge cases: empty states, localized string overflows, truncated metadata tags, server timeout states, and permission denials.',
-            'Traditionally, documenting these states took days of tedious Figma variant cloning. Today, I use AI to rapidly generate comprehensive test matrices, synthesize realistic localization test strings, and audit token mappings before handoff.'
-          ],
-          quote: '“AI doesn’t make strategic product decisions. It frees the designer from manual production grunt work so they can actually focus on strategic product decisions.”'
-        },
-        {
-          heading: 'Where AI Fails (And Why Human Judgment Remains King)',
-          paragraphs: [
-            'AI models have zero intuition for organizational politics, business context, or the emotional friction a user experiences when navigating an ambiguous financial workflow. It can generate twenty pretty dashboards in seconds, but it cannot tell you which metric actually drives retention or how the sales team handles customer onboarding.',
-            'The highest leverage designers today are those who treat AI as an energetic junior researcher: giving it structured prompts, rigorously verifying its outputs, and applying human taste and architectural rigor to the final product.'
-          ]
-        }
-      ],
-      takeaways: [
-        'Automate edge cases: Use AI for edge cases, localization matrices, and token auditing.',
-        'Preserve human judgment: Never delegate core product strategy or user interview synthesis entirely to machines.',
-        'Velocity is a multiplier: Saving 10 hours of variant setup means 10 more hours of user research and prototyping.'
-      ]
-    }
-  },
-  {
     id: 'post-3',
     slug: 'from-zero-to-hardware-sync-designing-bluetooth-experience-tag-sports',
     title: 'From Zero to Hardware Sync: Designing the Bluetooth Experience for TAG Sports',
@@ -240,79 +203,6 @@ export const JOURNAL_POSTS: JournalPost[] = [
         'Ambient context dictates UI: Bright outdoor sun demands bold typographic weights and strict WCAG AAA contrast.',
         'Multimodal sensory feedback: Audio and haptic cues bridge the gap when visual attention is split.',
         'Self-healing connection states: Automatic background reconnection prevents user drop-off.'
-      ]
-    }
-  },
-  {
-    id: 'post-4',
-    slug: 'the-micro-friction-tax-how-small-ux-bottlenecks-bleed-saas-retention',
-    title: 'The Micro-Friction Tax: How Small UX Bottlenecks Bleed Enterprise SaaS Retention',
-    subtitle: 'Analyzing conversion drop-offs, table density issues, and keyboard navigation gaps',
-    excerpt: 'How silent interaction bottlenecks accumulate into churn, and practical audits to remove daily enterprise friction.',
-    date: 'July 03, 2026',
-    readingTime: '5 min read',
-    category: 'UX Strategy',
-    tags: ['SaaS Metrics', 'Interaction Design', 'Usability Auditing'],
-    image: '/Erwin/Pics/laptop static.png',
-    content: {
-      lead: 'In enterprise B2B software, users rarely churn because of one missing feature. They churn because every single day, completing their 10 core repetitive tasks takes 14 unnecessary clicks, 3 slow modal transitions, and unremembered filter states.',
-      sections: [
-        {
-          heading: 'The Invisible Cost of Daily Friction',
-          paragraphs: [
-            'If an operations manager performs an action 40 times a day, and an interface introduces a 4-second delay or an unnecessary confirmation dialog, that amounts to hours of lost company time each quarter.',
-            'When contract renewal time arrives, these micro-frustrations surface as qualitative complaints: “The software feels slow and clunky.” Decision-makers then open the door to competitor evaluations.'
-          ],
-          quote: '“Speed is a feature. Reducing interaction friction directly reduces churn risk in annual enterprise renewals.”'
-        },
-        {
-          heading: 'Tactical Solutions: Keyboard First, State Persistence',
-          paragraphs: [
-            'The simplest fixes often yield the highest ROI: implementing global keyboard shortcuts (CMD+K search, arrow navigation across tables), persisting user column preferences in local storage, and removing redundant “Are you sure?” dialogs in favor of non-blocking toast undo notifications.'
-          ]
-        }
-      ],
-      takeaways: [
-        'Audit high-frequency workflows: Optimize the top 5 actions users perform 90% of the time.',
-        'Embrace optimistic UI: Use non-destructive undo notifications instead of modal interrupt confirmations.',
-        'Persist user workspace states: Remembering filters, column widths, and zoom levels makes software feel intelligent.'
-      ]
-    }
-  },
-  {
-    id: 'post-5',
-    slug: 'architectural-thinking-in-interface-design-lessons-from-bim',
-    title: 'Architectural Thinking in Interface Design: Lessons From BIM and 3D Modeling',
-    subtitle: 'How building information modeling and structural discipline make digital products resilient',
-    excerpt: 'Applying architectural rigor, spatial balance, and structural systems thinking to build resilient software interfaces.',
-    date: 'May 22, 2026',
-    readingTime: '8 min read',
-    category: 'Perspective',
-    tags: ['Systems Thinking', 'Architecture', 'Design Foundations'],
-    image: '/Me-1.png',
-    content: {
-      lead: 'In 2010 I graduated with a degree in Architecture and worked with Building Information Modeling (BIM). When you design a physical building, you cannot simply “hotfix” a foundation beam after the concrete is poured. You must understand load distribution, material tolerances, and spatial flow before construction begins.',
-      sections: [
-        {
-          heading: 'Digital Products as Structural Systems',
-          paragraphs: [
-            'When I transitioned into digital product design in 2013, I immediately recognized that software interfaces are essentially digital buildings: they have foundations (design tokens and data schemas), structural load-bearing walls (core information architecture and navigation), and decorative finishes (typography, motion, and color accents).',
-            'When designers focus only on the surface aesthetics without respecting the underlying structural constraints, the digital product crumbles under the weight of feature expansion within 18 months.'
-          ],
-          quote: '“Architecture taught me to design from the foundation upward. A beautiful façade on a broken structure is just technical debt with nice paint.”'
-        },
-        {
-          heading: 'Spatial Harmony and Cognitive Ergonomics',
-          paragraphs: [
-            'Just as physical doorways, sightlines, and natural light guide human foot traffic through a physical museum or airport terminal, negative space, visual hierarchy, and contrast guide human cognitive attention across a complex SaaS platform.',
-            'By applying architectural rigor to interface layouts, we create software that feels grounded, permanent, and effortless to inhabit.'
-          ]
-        }
-      ],
-      takeaways: [
-        'Design systems are structural engineering: Tokens and components must be built for load-bearing expansion.',
-        'Negative space is not empty space: It is cognitive breathing room that defines the hierarchy of information.',
-        'Understand technical constraints early: Collaborating closely with front-end engineers is like an architect collaborating with structural engineers on site.'
       ]
     }
   }
@@ -459,71 +349,37 @@ export const UKRAINIAN_POST_TRANSLATIONS: Record<string, Partial<JournalPost>> =
       ]
     }
   },
-  'post-2': {
-    title: 'AI як другий пілот у дизайні: прискорення системних процесів без зайвого гайпу',
-    subtitle: 'Практичні підходи до аудиту компонентів, генерації крайових випадків та автоматизації документації',
-    excerpt: 'Як штучний інтелект автоматизує рутинні аудити компонентів і документацію, дозволяючи дизайнерам зосередитися на стратегії.',
-    readingTime: '5 хв читання',
-    category: 'AI та процеси',
-    tags: ['AI-інструменти', 'Дизайн-процес', 'Автоматизація', 'Продуктивність'],
-    date: '18 вересня 2026',
-    content: {
-      lead: 'Дискусія навколо AI у продуктовому дизайні коливається між ейфорією та страхами. Реальність у роботі сеньйор-дизайнера значно прагматичніша: AI — це найефективніший прискорювач рутинних, механічних системних завдань.',
-      sections: [
-        {
-          heading: 'Автоматизація нудних 80%',
-          paragraphs: [
-            'Проєктування масштабних додатків вимагає опрацювання сотень крайових станів: порожні екрани, переповнення перекладених рядків, довгі теги метаданих, таймаути сервера та заборони доступу.',
-            'Раніше документування цих станів займало дні клонування варіантів у Figma. Сьогодні я використовую AI для швидкої генерації тестових матриць, локалізаційних рядків і перевірки мапінгу токенів перед передачею в розробку.'
-          ],
-          quote: '«AI не приймає стратегічних рішень. Він звільняє дизайнера від конвеєрної рутини, щоб той міг сфокусуватися на стратегії та користувачах».'
-        },
-        {
-          heading: 'Де AI безсилий (і чому людське судження вирішує все)',
-          paragraphs: [
-            'Моделі не мають інтуїції щодо бізнес-контексту чи емоційного тертя, яке відчуває людина у заплутаному фінансовому процесі. AI може видати 20 красивих дашбордів за секунди, але не скаже, яка метрика справді утримує користувачів.',
-            'Найефективніші дизайнери сьогодні ставляться до AI як до енергійного помічника: дають структуровані запити, суворо верифікують результати та застосовують власний досвід і відчуття смаку.'
-          ]
-        }
-      ],
-      takeaways: [
-        'Автоматизація рутини: Використовуйте AI для крайових станів, матриць локалізації та перевірки токенів.',
-        'Людське судження: Ніколи не делегуйте стратегію продукту чи глибинні інтервʼю алгоритмам.',
-        'Швидкість як важіль: Економія 10 годин на варіантах означає 10 годин на дослідження.'
-      ]
-    }
-  },
   'post-3': {
-    title: 'Архітектурне мислення в дизайні інтерфейсів: уроки BIM та 3D-моделювання',
-    subtitle: 'Як дисципліна інформаційного моделювання будівель робить цифрові продукти стійкими',
-    excerpt: 'Застосування архітектурної строгості, просторового балансу та системного мислення для створення надійних інтерфейсів.',
-    readingTime: '8 хв читання',
-    category: 'Погляд',
-    tags: ['Системне мислення', 'Архітектура', 'Основи дизайну'],
-    date: '22 травня 2026',
+    title: 'З нуля до синхронізації з «залізом»: дизайн Bluetooth-досвіду для TAG Sports',
+    subtitle: 'Мікровзаємодії, тактильний відгук та читабельність на яскравому сонці в iOS та Apple Watch',
+    excerpt: 'Проєктування безшовного Bluetooth-підключення, контрастного інтерфейсу для вулиці та тактильного відгуку для спортивного радара.',
+    readingTime: '6 хв читання',
+    category: 'Mobile & IoT',
+    tags: ['Mobile UX', 'Hardware Pairing', 'iOS', 'Wearables'],
+    date: '12 серпня 2026',
     content: {
-      lead: 'У 2010 році я закінчив архітектурний факультет і працював із технологіями BIM. Проєктуючи фізичну будівлю, ви не можете просто «виправити баг» у фундаменті після заливки бетону. Ви зобовʼязані прорахувати навантаження, властивості матеріалів і рух простору ще до початку робіт.',
+      lead: 'Проєктування софту для фізичних пристроїв — один із найбезкомпромісніших викликів у дизайні. Коли застосунок втрачає звʼязок із радаром на полі, спортсмен звинувачує весь продукт, а не Bluetooth-протокол.',
       sections: [
         {
-          heading: 'Цифрові продукти як конструктивні системи',
+          heading: 'Дизайн для руху та сліпучого сонця',
           paragraphs: [
-            'Перейшовши в цифровий дизайн у 2013 році, я одразу помітив: інтерфейси — це цифрові будівлі. Вони мають фундамент (токени й схеми даних), опорні стіни (архітектуру інформації й навігацію) та оздоблення (типографіку, анімації, акцентні кольори).',
-            'Коли дизайнери захоплюються лише естетикою без поваги до конструктиву, продукт руйнується під вагою нових функцій уже за 18 місяців.'
+            'Спортсмени дивляться в телефон не так, як офісний співробітник у монітор. Вони пітніють, носять рукавички, стоять під полуденним сонцем і кидають погляд на екран на півтори секунди між підходами.',
+            'Для TAG One це означало надвисокий типографічний контраст, збільшені зони дотику та кольорову індикацію, яку добре видно з трьох метрів без вдивляння в дрібні деталі.'
           ],
-          quote: '«Архітектура навчила мене проєктувати від фундаменту вгору. Гарний фасад на хиткій конструкції — це просто технічний борг із гарною фарбою».'
+          quote: '«Якщо атлету потрібно знімати рукавички чи переривати тренування заради налаштування звʼязку — дизайн провалився».'
         },
         {
-          heading: 'Просторова гармонія та когнітивна ергономіка',
+          heading: 'Правило 3 секунд на підключення',
           paragraphs: [
-            'Так само як дверні прорізи та природне світло спрямовують рух людей у будівлі, вільний простір, візуальна ієрархія й контраст керують увагою користувача в інтерфейсі.',
-            'Архітектурна строгість дозволяє створювати додатки, які відчуваються надійними, логічними та легкими у взаємодії.'
+            'Складнощі зі зʼєднанням — головна причина відтоку в споживчому IoT. Ми відмовилися від багатокрокових майстрів налаштування на користь пасивного виявлення: вмикаєте радар, підносите телефон ближче ніж на метр — і плавна радіальна анімація підтверджує звʼязок менш ніж за 3 секунди.',
+            'Ми додали синхронізований вібровідгук і чіткі звукові сигнали, щоб тренери чули підтвердження зʼєднання, не відриваючи очей від гравців.'
           ]
         }
       ],
       takeaways: [
-        'Дизайн-системи — це інженерія: токени та компоненти мають витримувати масштабування.',
-        'Повітря в макеті — це не порожнеча: це когнітивний простір для фокусування уваги.',
-        'Враховуйте технічні обмеження: тісна робота з розробниками схожа на взаємодію архітектора з конструктором на будівництві.'
+        'Контекст диктує контраст: Яскраве сонце вимагає щільних накреслень шрифту та суворого стандарту WCAG AAA.',
+        'Мультимодальний відгук: Звук і тактильний відгук компенсують брак візуальної уваги.',
+        'Самовідновлення звʼязку: Автоматичне фонове перепідключення виключає роздратування користувача.'
       ]
     }
   }
@@ -668,40 +524,6 @@ export const RUSSIAN_POST_TRANSLATIONS: Record<string, Partial<JournalPost>> = {
       ]
     }
   },
-  'post-2': {
-    title: 'AI как второй пилот в дизайне: ускорение системных процессов без лишнего хайпа',
-    subtitle: 'Практические подходы к аудиту компонентов, генерации краевых кейсов и автоматизации документации',
-    excerpt: 'Как искусственный интеллект автоматизирует рутинные аудиты компонентов и документацию, позволяя дизайнерам сосредоточиться на стратегии.',
-    readingTime: '5 мин чтения',
-    category: 'AI и процессы',
-    tags: ['AI-инструменты', 'Дизайн-процесс', 'Автоматизация', 'Продуктивность'],
-    date: '18 сентября 2026',
-    content: {
-      lead: 'Дискуссия вокруг AI в продуктовом дизайне колеблется между эйфорией и экзистенциальным страхом. Реальность в работе сеньор-дизайнера куда более прагматична: AI — это самый эффективный ускоритель рутинных, механических системных задач.',
-      sections: [
-        {
-          heading: 'Автоматизация скучных 80%',
-          paragraphs: [
-            'Проектирование масштабных enterprise-приложений требует учета сотен краевых состояний: пустые экраны, переполнение переведенных строк, длинные теги метаданных, таймауты сервера и отказы в доступе.',
-            'Раньше документирование этих состояний отнимало дни клонирования вариантов в Figma. Сегодня я использую AI для быстрой генерации тестовых матриц, реалистичных локализационных строк и аудита мапинга токенов перед передачей в разработку.'
-          ],
-          quote: 'AI не принимает стратегических решений. Он освобождает дизайнера от рутины, чтобы тот мог сфокусироваться на стратегии и пользователях.'
-        },
-        {
-          heading: 'Где AI бессилен (и почему человеческое суждение решает всё)',
-          paragraphs: [
-            'У моделей нет интуиции относительно бизнес-контекста или эмоционального трения, которое испытывает человек в запутанном финансовом процессе. AI может выдать 20 красивых дашбордов за секунды, но не скажет, какая метрика действительно удерживает клиентов.',
-            'Самые эффективные дизайнеры сегодня относятся к AI как к энергичному младшему исследователю: дают структурированные промпты, строго проверяют результаты и применяют собственный опыт, вкус и системную строгость.'
-          ]
-        }
-      ],
-      takeaways: [
-        'Автоматизация рутины: Используйте AI для краевых состояний, матриц локализации и проверки токенов.',
-        'Человеческое суждение: Никогда не делегируйте стратегию продукта или глубинные интервью алгоритмам.',
-        'Скорость как рычаг: Экономия 10 часов на рутине означает 10 часов на исследования и прототипирование.'
-      ]
-    }
-  },
   'post-3': {
     title: 'С нуля до синхронизации с «железом»: дизайн Bluetooth-опыта для TAG Sports',
     subtitle: 'Микровзаимодействия, тактильный отклик и читаемость на ярком солнце на iOS и Apple Watch',
@@ -733,73 +555,6 @@ export const RUSSIAN_POST_TRANSLATIONS: Record<string, Partial<JournalPost>> = {
         'Контекст диктует контраст: Яркое солнце требует плотных начертаний шрифта и строгого стандарта WCAG AAA.',
         'Мультимодальный отклик: Звук и тактильный отклик компенсируют нехватку визуального внимания.',
         'Самовосстановление связи: Автоматическое фоновое переподключение исключает раздражение пользователя.'
-      ]
-    }
-  },
-  'post-4': {
-    title: 'Налог на микротрение: как мелкие UX-проблемы съедают удержание в enterprise SaaS',
-    subtitle: 'Анализ провалов конверсии, плотности таблиц и пробелов клавиатурной навигации',
-    excerpt: 'Как незаметные шероховатости интерфейса приводят к оттоку, и практический аудит для устранения ежедневного трения.',
-    readingTime: '5 мин чтения',
-    category: 'UX Стратегия',
-    tags: ['SaaS Метрики', 'Interaction Design', 'UX Аудит'],
-    date: '3 июля 2026',
-    content: {
-      lead: 'В корпоративном софте пользователи редко уходят из-за отсутствия одной функции. Они уходят потому, что каждый день выполнение их 10 базовых задач требует 14 лишних кликов, 3 медленных модальных окон и забытых фильтров.',
-      sections: [
-        {
-          heading: 'Невидимая цена ежедневного трения',
-          paragraphs: [
-            'Если операционный менеджер выполняет действие 40 раз в день, и интерфейс добавляет 4-секундную задержку или лишнее окно подтверждения, за квартал компания теряет десятки часов рабочего времени.',
-            'Когда приходит время продления контракта, эти микрораздражения превращаются в вывод руководства: «Софт медленный и неудобный». И открывается дверь для конкурентов.'
-          ],
-          quote: 'Скорость — это ключевая фича. Устранение трения в интерфейсе напрямую защищает от оттока при годовых продлениях.'
-        },
-        {
-          heading: 'Тактические решения: клавиатура и сохранение состояний',
-          paragraphs: [
-            'Самые простые решения дают максимальную отдачу: глобальные горячие клавиши (поиск CMD+K, навигация стрелками в таблицах), сохранение настроек колонок в локальной памяти и замена блокирующих окон «Вы уверены?» на мягкие уведомления с возможностью отмены.'
-          ]
-        }
-      ],
-      takeaways: [
-        'Аудит частых сценариев: Оптимизируйте 5 ключевых действий, выполняемых 90% времени.',
-        'Оптимистичный UI: Заменяйте модальные окна подтверждения возможностью отмены действия.',
-        'Сохранение контекста: Запоминание фильтров, ширин колонок и масштаба делает систему по-настоящему умной.'
-      ]
-    }
-  },
-  'post-5': {
-    title: 'Архитектурное мышление в дизайне интерфейсов: уроки BIM и 3D-моделирования',
-    subtitle: 'Как дисциплина информационного моделирования зданий делает цифровые продукты устойчивыми',
-    excerpt: 'Применение архитектурной строгости, пространственного баланса и системного мышления для создания надежных интерфейсов.',
-    readingTime: '8 мин чтения',
-    category: 'Взгляд',
-    tags: ['Системное мышление', 'Архитектура', 'Основы дизайна'],
-    date: '22 мая 2026',
-    content: {
-      lead: 'В 2010 году я окончил архитектурный факультет и работал с технологиями BIM. Проектируя физическое здание, вы не можете «исправить баг» в фундаментной балке после заливки бетона. Вы обязаны рассчитать нагрузки, допуски материалов и потоки пространства до начала стройки.',
-      sections: [
-        {
-          heading: 'Цифровые продукты как конструктивные системы',
-          paragraphs: [
-            'Перейдя в цифровой дизайн в 2013 году, я сразу понял: интерфейсы — это цифровые здания. У них есть фундамент (токены и схемы данных), несущие стены (информационная архитектура и навигация) и отделка (типографика, анимации, акцентные цвета).',
-            'Когда дизайнеры увлекаются только внешней эстетикой без учета конструкции, продукт рушится под весом новых функций уже через 18 месяцев.'
-          ],
-          quote: 'Архитектура научила меня проектировать от фундамента вверх. Красивый фасад на ненадежной конструкции — это просто техдолг со свежей краской.'
-        },
-        {
-          heading: 'Пространственная гармония и когнитивная эргономика',
-          paragraphs: [
-            'Так же как дверные проемы и естественный свет направляют движение людей в здании, свободное пространство, визуальная иерархия и контраст управляют вниманием пользователя в интерфейсе.',
-            'Архитектурная строгость позволяет создавать приложения, которые ощущаются основательными, логичными и легкими в работе.'
-          ]
-        }
-      ],
-      takeaways: [
-        'Дизайн-системы — это инженерия: Токены и компоненты должны выдерживать масштабирование.',
-        'Воздух в макете — не пустота: Это когнитивное пространство для фокусировки внимания.',
-        'Технические ограничения: Тесная работа с разработчиками похожа на сотрудничество архитектора с инженером на объекте.'
       ]
     }
   }
