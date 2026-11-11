@@ -11,7 +11,6 @@ import Skills from '../components/Skills';
 import Contact from '../components/Contact';
 import ProjectShowcase from '../components/ProjectShowcase';
 import { TESTIMONIALS } from '../data';
-import { EyebrowReveal } from '../components/TextReveal';
 
 export default function Home() {
   const [activeTestimonialArrow, setActiveTestimonialArrow] = useState<'prev' | 'next' | null>(null);
@@ -19,9 +18,6 @@ export default function Home() {
 
   const currentTestimonial = TESTIMONIALS[testimonialIdx];
   const counterText = `${String(testimonialIdx + 1).padStart(2, '0')}/${String(TESTIMONIALS.length).padStart(2, '0')}`;
-
-  // Set to true to restore the old static Featured Testimonial section
-  const SHOW_FEATURED_TESTIMONIAL = false;
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -36,66 +32,8 @@ export default function Home() {
       <StatsStrip />
       <ProjectGrid />
       <PartnerLogos />
-      <Services />
-      <Marquee />
-      <Skills />
 
-      {/* Featured Testimonial Section (Disabled by default, set SHOW_FEATURED_TESTIMONIAL to true to restore) */}
-      {SHOW_FEATURED_TESTIMONIAL && (
-        <section className="pt-16 md:pt-[128px] lg:pt-[128px] xl:pt-[176px] pb-0 relative" id="featured-testimonial">
-          <div className="container-custom relative z-10">
-            <div className="glass !bg-white/[0.01] py-[80px] px-8 md:px-12 lg:px-16 rounded-[40px] relative">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full relative z-10">
-                {/* Left Column: Heading */}
-                <div className="lg:col-span-4 flex flex-col items-start text-left">
-                  <EyebrowReveal text="TESTIMONIALS" delay={0.05} />
-                  <div className="flex flex-col w-full">
-                    <h2 className="text-2xl sm:text-[36px] md:text-4xl font-dm-sans font-extrabold tracking-[-1px] md:tracking-[-1px] text-white leading-tight sm:leading-[40px] md:leading-tight">
-                      Margarita Tiurina
-                    </h2>
-                    <div className="flex items-start gap-4 mt-6">
-                      <img 
-                        src="/turina.jpeg" 
-                        alt="Margarita Tiurina"
-                        loading="lazy"
-                        decoding="async"
-                        className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover border border-white/[0.12] flex-shrink-0"
-                        referrerPolicy="no-referrer"
-                      />
-                      <p className="text-[15px] text-white/40 leading-[22px] font-light max-w-[240px]">
-                        Senior Delivery Manager | PSM II | PSK I | SAFe RTE | SAFe SASM | SAFe PO/PM
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Right Column: Key Details */}
-                <div className="lg:col-span-8 lg:col-start-5 lg:max-w-[896px] w-full flex flex-row items-start gap-[36px] text-left relative">
-                  <Quote strokeWidth={0.75} className="w-[56px] h-[56px] text-[#ff6900] rotate-180 flex-shrink-0 mt-[-1px]" />
-                  <div className="flex-1 max-w-[780px] mt-[-2px]">
-                    <div className="space-y-4 text-[20px] leading-[28px] text-white/60 hover:text-white transition-colors duration-300 font-['Hanken_Grotesk'] font-light italic tracking-normal">
-                      <p>
-                        <span className="text-[#ff6900] font-['Hanken_Grotesk'] font-medium text-[24px] sm:text-[26px] leading-none mr-1 sm:mr-1.5 select-none align-baseline not-italic">
-                          ‘‘
-                        </span>
-                        Ihor is an experienced UI/UX designer who creates polished interfaces and collaborates closely with development teams.
-                      </p>
-                      <p>
-                        We worked together on a complex project involving numerous UI screens, themes, and icon sets. He consistently delivered thoughtful, high-quality designs under tight deadlines, helping the team stay on track throughout implementation.
-                      </p>
-                      <p>
-                        I highly recommend Ihor for any UI-focused project. He is skilled, reliable, and a pleasure to work with.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* All Projects Testimonials Section */}
+      {/* All Projects Testimonials Section (placed directly under Selected Partners) */}
       <section className="pt-[120px] md:pt-[128px] lg:pt-[128px] xl:pt-[176px] pb-0 relative overflow-x-clip" id="testimonials">
         <div className="container-custom relative z-10">
           <motion.div
@@ -104,13 +42,11 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-
-
             <div className="flex flex-col xl:flex-row gap-8 xl:gap-[92px] w-full items-start justify-start">
               {/* Left Column: Container for Card and Controls */}
               <div className="flex flex-col w-full xl:w-auto relative">
                 {/* Left Column: Heading Card */}
-                <div className="flex-shrink-0 flex flex-col justify-between text-left bg-[#f96701] rounded-2xl p-4 sm:p-6 md:p-8 w-full md:w-full lg:w-full xl:w-[465px] min-h-[196px] sm:min-h-[204px] md:min-h-[216px] xl:h-[256px] relative overflow-hidden">
+                <div className="flex-shrink-0 flex flex-col justify-between text-left bg-[#f96701] rounded-2xl p-4 sm:p-6 md:p-8 w-full md:w-full lg:w-full xl:w-[465px] min-h-[196px] sm:min-h-[204px] md:min-h-[216px] xl:h-[248px] relative overflow-hidden">
                   {/* Top Row: TESTIMONIALS & Counter */}
                   <div className="w-full flex items-center justify-between mb-4 relative z-10">
                     <span className="text-[10px] leading-none font-medium tracking-[0.14em] uppercase text-white/90 font-sans">
@@ -182,7 +118,7 @@ export default function Home() {
               </div>
               
               {/* Right Column / Below on Tablets: Key Details */}
-              <div className="flex-1 w-full text-left relative xl:min-h-[256px] xl:flex xl:flex-col xl:justify-center">
+              <div className="flex-1 w-full text-left relative xl:min-h-[248px] xl:flex xl:flex-col xl:justify-center">
                 <div className="w-full">
                   <AnimatePresence mode="wait">
                     <motion.div 
@@ -270,6 +206,10 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      <Services />
+      <Marquee />
+      <Skills />
 
       {/* Selected Work Showcase (2 Rows) */}
       <ProjectShowcase />
