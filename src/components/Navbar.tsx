@@ -185,9 +185,9 @@ export default function Navbar() {
             >
               {[
                 { label: 'Works', path: '/#work', icon: LayoutGrid },
+                { label: 'Client Reviews', path: '/#testimonials', icon: Star },
                 { label: 'Services', path: '/#services', icon: MonitorSmartphone },
                 { label: 'How I Work', path: '/#skills', icon: Workflow },
-                { label: 'Client Reviews', path: '/#testimonials', icon: Star },
                 { label: 'Contact', path: '/#contact', icon: MessageCircle }
               ].map((item, index) => {
                 const isHovered = hoveredIdx === index;
