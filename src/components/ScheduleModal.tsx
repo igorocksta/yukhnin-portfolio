@@ -17,6 +17,7 @@ import {
   Pencil,
   AlertCircle,
   Sparkles,
+  Link2,
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { useScheduleModal } from '../context/ScheduleModalContext';
@@ -56,7 +57,7 @@ const MONTH_NAMES = [
 const WEEKDAYS = ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU'];
 
 export default function ScheduleModal() {
-  const { isScheduleModalOpen, closeScheduleModal } = useScheduleModal();
+  const { isScheduleModalOpen, closeScheduleModal, copyBookingLink, linkCopied, bookingUrl } = useScheduleModal();
   
   const today = useMemo(() => {
     const d = new Date();
@@ -437,6 +438,33 @@ export default function ScheduleModal() {
     }
   };
 
+  const renderCopyLinkButton = (extraClasses = '') => (
+    <button
+      onClick={copyBookingLink}
+      type="button"
+      id="schedule-modal-share-btn"
+      title={`Copy direct booking link (${bookingUrl})`}
+      aria-label="Copy direct booking link"
+      className={`shrink-0 h-8 sm:h-9 md:h-10 px-3 sm:px-3.5 md:px-4 rounded-full border shadow-sm flex items-center gap-1.5 sm:gap-2 transition-all duration-200 cursor-pointer select-none text-[12px] sm:text-[13px] font-normal active:scale-95 ${
+        linkCopied
+          ? 'bg-emerald-500/15 border-emerald-500/50 text-emerald-400 shadow-[0_0_16px_rgba(16,185,129,0.25)]'
+          : 'bg-white/[0.04] hover:bg-white/[0.08] border-white/[0.12] hover:border-white/[0.24] text-white/80 hover:text-white'
+      } ${extraClasses}`}
+    >
+      {linkCopied ? (
+        <>
+          <Check size={14} className="text-emerald-400 shrink-0" strokeWidth={2.5} />
+          <span className="font-sans font-medium text-emerald-400">Link copied!</span>
+        </>
+      ) : (
+        <>
+          <Link2 size={14} strokeWidth={1.8} className="text-[#ff6900] shrink-0" />
+          <span className="font-sans font-light">Copy link</span>
+        </>
+      )}
+    </button>
+  );
+
   if (typeof document === 'undefined') return null;
 
   return createPortal(
@@ -474,7 +502,7 @@ export default function ScheduleModal() {
               onClick={handleClose}
               type="button"
               id="schedule-modal-close-btn"
-              className="absolute top-4 right-4 sm:top-6 sm:right-6 w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#18181b] border border-white/[0.16] shadow-[0_4px_16px_rgba(0,0,0,0.6)] flex items-center justify-center text-white hover:text-white hover:bg-white/20 transition-all cursor-pointer z-30"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#18181b] border border-white/[0.16] shadow-[0_4px_16px_rgba(0,0,0,0.6)] flex items-center justify-center text-white hover:text-white hover:bg-white/20 transition-all cursor-pointer z-30 select-none active:scale-95"
               aria-label="Close modal"
             >
               <X size={16} strokeWidth={1.8} className="md:w-[18px] md:h-[18px]" />
@@ -555,9 +583,12 @@ export default function ScheduleModal() {
                   <div className="text-[10px] leading-[15px] font-light tracking-[0.14em] uppercase text-[#ff6900] block mb-2 font-sans">
                     30 MIN INTRO CALL <span className="text-white/30 mx-2">/</span> <span className="text-white/60">DATE</span>
                   </div>
-                  <h3 className="text-2xl sm:text-[32px] font-dm-sans font-extrabold tracking-[-0.5px] text-[#f5f5f5] leading-[32px] sm:leading-[42px]">
-                    When works for you?
-                  </h3>
+                  <div className="flex items-end justify-between gap-3 sm:gap-4">
+                    <h3 className="text-2xl sm:text-[32px] font-dm-sans font-extrabold tracking-[-0.5px] text-[#f5f5f5] leading-[32px] sm:leading-[42px]">
+                      When works for you?
+                    </h3>
+                    {renderCopyLinkButton()}
+                  </div>
                 </div>
 
                 {/* Month Selector Bar */}
@@ -709,9 +740,12 @@ export default function ScheduleModal() {
                   <div className="text-[10px] leading-[15px] font-light tracking-[0.14em] uppercase text-[#ff6900] block mb-2 font-sans">
                     30 MIN INTRO CALL <span className="text-white/30 mx-2">/</span> <span className="text-white/60">TIME</span>
                   </div>
-                  <h3 className="text-2xl sm:text-[32px] font-dm-sans font-extrabold tracking-[-0.5px] text-[#f5f5f5] leading-[32px] sm:leading-[42px]">
-                    What time fits best?
-                  </h3>
+                  <div className="flex items-end justify-between gap-3 sm:gap-4">
+                    <h3 className="text-2xl sm:text-[32px] font-dm-sans font-extrabold tracking-[-0.5px] text-[#f5f5f5] leading-[32px] sm:leading-[42px]">
+                      What time fits best?
+                    </h3>
+                    {renderCopyLinkButton()}
+                  </div>
                   <div className="flex flex-wrap items-center gap-2.5 mt-4">
                     <span className="text-xs sm:text-sm font-normal text-[#f5f5f5] flex items-center gap-1.5 sm:gap-2 bg-[#ff6900]/10 border border-[#ff6900]/30 px-3.5 py-1.5 rounded-full">
                       <Globe size={14} strokeWidth={2} className="text-[#ff6900]" />
@@ -809,9 +843,12 @@ export default function ScheduleModal() {
                   <div className="text-[10px] leading-[15px] font-light tracking-[0.14em] uppercase text-[#ff6900] block mb-2 font-sans">
                     30 MIN INTRO CALL <span className="text-white/30 mx-2">/</span> <span className="text-white/60">DETAILS</span>
                   </div>
-                  <h3 className="text-2xl sm:text-[32px] font-dm-sans font-extrabold tracking-[-0.5px] text-[#f5f5f5] leading-[32px] sm:leading-[42px]">
-                    Who should I expect?
-                  </h3>
+                  <div className="flex items-end justify-between gap-3 sm:gap-4">
+                    <h3 className="text-2xl sm:text-[32px] font-dm-sans font-extrabold tracking-[-0.5px] text-[#f5f5f5] leading-[32px] sm:leading-[42px]">
+                      Who should I expect?
+                    </h3>
+                    {renderCopyLinkButton()}
+                  </div>
                 </div>
 
                 {/* Booking summary banner */}

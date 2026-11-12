@@ -60,6 +60,11 @@ function AppContent() {
           <main>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/book" element={<Home />} />
+              <Route path="/schedule" element={<Home />} />
+              <Route path="/call" element={<Home />} />
+              <Route path="/book-call" element={<Home />} />
+              <Route path="/intro-call" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/journal" element={<Journal />} />
               <Route path="/journal/:slug" element={<JournalArticle />} />

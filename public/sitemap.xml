@@ -17,6 +17,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
+  <!-- Book a Call -->
+  <url>
+    <loc>https://yukhnindesign.work/book</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- /journal -->
   <url>
     <loc>https://yukhnindesign.work/journal</loc>
